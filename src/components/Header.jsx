@@ -6,7 +6,7 @@ import { NavLink } from "react-router-dom";
 export default function Header(){
     const [hide, setHide] = useState(false);
     const {title, setTitle} = useContext(UserContext)
-    return <div className={`${hide ? `w-[120px]` : `w-[300px]`} bg-[#2553FF] text-white py-10 transition-all duration-700`}>
+    return <div className={`${hide ? `w-[120px]` : `w-[300px]`} bg-[linear-gradient(to_right,#2553FF,#5A7BFF)] text-white py-10 transition-all duration-500`}>
         <div className="w-full flex items-center h-[60px] justify-between transition-all duration-700 px-7">
             <img src="https://cdn-icons-png.flaticon.com/128/3242/3242257.png" alt="" className={`${hide ? `h-[70%]` : `h-[80%]`} transition-all duration-700`} />
             <p className={`${hide ? `hidden` : `flex`} transition-all duration-700 text-2xl font-semibold`}>{title}</p>
