@@ -4,8 +4,12 @@ import {
   Tooltip,
   Legend,
   RadialLinearScale,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  PointElement
 } from "chart.js";
-import { PolarArea } from "react-chartjs-2";
+import { PolarArea, Radar } from "react-chartjs-2";
 
 
 const polarAreaData = {
@@ -33,13 +37,42 @@ const polarAreaData = {
     ]
 };
 
+const radarData = {
+    labels: ['JavaScript', 'Python', 'Java', 'C++', 'Go', 'Rust'],
+    datasets: [
+        {
+            label: 'Backend Skill Level',
+            data: [80, 90, 75, 60, 55, 50],
+            backgroundColor: 'rgba(54, 162, 235, 0.3)',
+            borderColor: 'rgba(54, 162, 235, 1)',
+            borderWidth: 2,
+            pointBackgroundColor: 'rgba(54, 162, 235, 1)',
+        },
+        {
+            label: 'Frontend Skill Level',
+            data: [95, 60, 40, 30, 20, 15],
+            backgroundColor: 'rgba(255, 99, 132, 0.3)',
+            borderColor: 'rgba(255, 99, 132, 1)',
+            borderWidth: 2,
+            pointBackgroundColor: 'rgba(255, 99, 132, 1)',
+        }
+    ]
+};
 
-ChartJS.register(ArcElement, Tooltip, Legend, RadialLinearScale);
+ChartJS.register(
+    ArcElement, 
+    Tooltip, 
+    Legend, 
+    RadialLinearScale
+);
 
 export default function Settings(){
     return <div className="w-full h-[calc(100vh-70px)] grid grid-cols-2 gap-10">
         <div className="">
             <PolarArea key={Math.random()} data={polarAreaData} />
+        </div>
+        <div>
+            <Radar key={Math.random()} data={radarData} />
         </div>
     </div>
 }

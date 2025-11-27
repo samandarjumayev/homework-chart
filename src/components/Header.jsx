@@ -1,6 +1,6 @@
 import { useContext, useState } from "react"
 import { UserContext } from "../App";
-import { ChartNoAxesCombined, ChevronLeft, ChevronRight, Cog, MessageCircle, ShoppingCart } from "lucide-react";
+import { ChartNoAxesCombined, ChevronLeft, ChevronRight, Cog, LayoutDashboard, MessageCircle, ShoppingCart } from "lucide-react";
 import { NavLink } from "react-router-dom";
 
 export default function Header(){
@@ -32,6 +32,13 @@ export default function Header(){
                 className={`flex items-center cursor-pointer hover:bg-[#ffffff32] py-2 px-5 gap-4 rounded-lg transition-all duration-700 hover:duration-100 hover:scale-105 active:duration-100 active:scale-100`}>
                     <Cog />
                     <p className={`${hide ? `hidden` : `flex`} font-semibold transition-all duration-400`}>Settings</p>
+            </NavLink>
+            <NavLink 
+                to={'/haftalik'} 
+                onClick={() => setTitle('Weekly')}
+                className={`flex items-center cursor-pointer hover:bg-[#ffffff32] py-2 px-5 gap-4 rounded-lg transition-all duration-700 hover:duration-100 hover:scale-105 active:duration-100 active:scale-100`}>
+                    <LayoutDashboard />
+                    <p className={`${hide ? `hidden` : `flex`} font-semibold transition-all duration-400`}>Weekly</p>
             </NavLink>
             <NavLink 
                 to={'/cart'} 

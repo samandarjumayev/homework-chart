@@ -7,6 +7,7 @@ import Dashboard from './components/Dashboard.jsx'
 import Settings from './components/Settings.jsx'
 import Cart from './components/Cart.jsx'
 import Message from './components/Message.jsx'
+import Haftalik from './components/Haftalik.jsx'
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: '/message',
         element: <Message />
+      },
+      {
+        path: '/haftalik',
+        element: <Haftalik />
       }
     ]
   }
